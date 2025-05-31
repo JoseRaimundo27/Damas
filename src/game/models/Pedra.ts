@@ -1,18 +1,18 @@
-import type { Casa } from "./Casa";
+import type { Cor } from "../../types/Cor";
 
 export class Pedra {
     id: string;
-    casa: Casa | null;
+    cor: Cor;
+    dama: boolean;
 
-    constructor(id: string, casa: Casa | null) {
+    constructor(id: string, cor: Cor) {
         this.id = id;
-        this.casa = casa;
-        this.casa?.setOcupadaPor(this);
+        this.cor = cor;
+        this.dama = false; // Inicialmente, a pedra não é uma dama
 
     }
 
-    getPosition(): { x: number; y: number } {
-        return this.casa ? this.casa.getPosition() : { x: -1, y: -1 };
+    setDama(isDama: boolean): void {
+        this.dama = isDama;
     }
-    
 }

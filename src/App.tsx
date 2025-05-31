@@ -13,7 +13,6 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <h1>Jogo de Damas</h1>
       <TabuleiroComponent tabuleiro={tabuleiro} onClick={handleCasaClick} />
     </div>
   );
