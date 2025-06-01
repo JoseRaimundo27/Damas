@@ -9,10 +9,14 @@ export class Pedra {
         this.id = id;
         this.cor = cor;
         this.dama = false; // Inicialmente, a pedra não é uma dama
-
     }
 
-    setDama(isDama: boolean): void {
+    public getCor(): Cor {
+        return this.cor;
+    }
+    
+    public setDama(isDama: boolean): void {
         this.dama = isDama;
     }
+    
 }

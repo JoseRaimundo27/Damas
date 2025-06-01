@@ -1,19 +1,20 @@
-import React, { useState } from "react";
-import { Tabuleiro } from "./game/models/Tabuleiro";
+import  { useState } from "react";
 import TabuleiroComponent from "./components/TabuleiroComponent/TabuleiroComponent";
 import styles from "./App.module.scss";
+import { Jogo } from "./game/logic/Jogo";
 
 function App() {
-  const [tabuleiro, setTabuleiro] = useState(new Tabuleiro());
+  const [jogo, setJogo] = useState(new Jogo());
 
   const handleCasaClick = (linha: number, coluna: number) => {
-    const casa = tabuleiro.getCasa(linha, coluna);
-    console.log("Casa clicada:", casa);
+    jogo.handleCasaClick(linha, coluna);
+    
+    
   };
 
   return (
     <div className={styles.app}>
-      <TabuleiroComponent tabuleiro={tabuleiro} onClick={handleCasaClick} />
+      <TabuleiroComponent tabuleiro={jogo.tabuleiro} onClick={handleCasaClick} />
     </div>
   );
 }

@@ -8,7 +8,7 @@ type Props = {
 export default function PedraComponent(props: Props) {
     const { pedra } = props;
   return (
-    <div className={`${styles.pedra} ${pedra.cor === 'verde' ? styles.verde : styles.vermelho}`}>
+    <div className={`${styles.pedra} ${pedra.cor === 'verde' ? styles.verde : styles.vermelha}`}>
     </div>
   )
 }

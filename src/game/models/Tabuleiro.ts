@@ -35,4 +35,11 @@ export class Tabuleiro {
     }
     return this.casas[x][y];
   }
+  
+  public casaTemPedra(x: number, y: number): boolean {
+    if ( this.casas[x][y].getOcupadaPor() === null) {
+      return false;
+    }
+    return true;
+  }
 }
